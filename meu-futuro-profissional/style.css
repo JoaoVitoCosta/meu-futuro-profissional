@@ -1,0 +1,711 @@
+/* Variáveis de Cores - Identidade Visual Jurídica e Polícia Federal */
+:root {
+  --primary: #0b1629;       /* Azul-Marinho Institucional */
+  --primary-light: #162b4d;
+  --accent: #d4af37;        /* Dourado Distintivo / Justiça */
+  --accent-hover: #b59226;
+  --bg-main: #ffffff;
+  --bg-alt: #f3f5f8;
+  --text-main: #1f2937;
+  --text-muted: #4b5563;
+  --card-bg: #ffffff;
+  --border-color: #e5e7eb;
+  --shadow: 0 10px 25px rgba(11, 22, 41, 0.08);
+}
+
+/* Tema Escuro (Alternado via JavaScript) */
+body.dark-theme {
+  --bg-main: #090f1d;
+  --bg-alt: #11192c;
+  --text-main: #f3f4f6;
+  --text-muted: #9ca3af;
+  --card-bg: #18233c;
+  --border-color: #2d3b59;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Merriweather', serif;
+  line-height: 1.3;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(11, 22, 41, 0.96);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  border-bottom: 2px solid var(--accent);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.logo {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo i {
+  color: var(--accent);
+  font-size: 1.4rem;
+}
+
+.logo strong {
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: #e5e7eb;
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.theme-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.theme-btn:hover {
+  background: var(--accent);
+  color: var(--primary);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  background: url('imagens/hero-pf.jpg') center/cover no-repeat;
+  padding-top: 70px;
+  color: #ffffff;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(11, 22, 41, 0.88) 0%, rgba(15, 30, 54, 0.72) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(212, 175, 55, 0.18);
+  border: 1px solid var(--accent);
+  color: #fde047;
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 3.1rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: #e2e8f0;
+  margin-bottom: 32px;
+}
+
+.hero-subtitle strong {
+  color: var(--accent);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 13px 26px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+  display: inline-block;
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  color: var(--primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+}
+
+.btn-outline:hover {
+  background-color: #ffffff;
+  color: var(--primary);
+}
+
+/* Seções Gerais */
+.section {
+  padding: 85px 0;
+}
+
+.bg-alt {
+  background-color: var(--bg-alt);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 55px;
+}
+
+.section-title {
+  font-size: 2.1rem;
+  color: var(--primary);
+  margin-bottom: 12px;
+  position: relative;
+  display: inline-block;
+}
+
+body.dark-theme .section-title {
+  color: #f9fafb;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+  margin: 10px auto 0;
+}
+
+.section-header p {
+  color: var(--text-muted);
+}
+
+/* Grid 2 Colunas */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.image-frame {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border-bottom: 4px solid var(--accent);
+}
+
+.image-frame img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  display: block;
+}
+
+.image-caption {
+  background: var(--primary);
+  color: #ffffff;
+  padding: 12px 18px;
+  font-size: 0.9rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.text-content h2::after {
+  margin: 10px 0 0;
+}
+
+.text-content p {
+  margin-bottom: 18px;
+  color: var(--text-muted);
+}
+
+.info-cards-mini {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.mini-card {
+  background: var(--bg-alt);
+  border: 1px solid var(--border-color);
+  padding: 15px 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.mini-card i {
+  color: var(--accent);
+  font-size: 1.4rem;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.mini-card span {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Timeline Acadêmica */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 30px;
+  border-left: 3px solid var(--accent);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 35px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -39px;
+  top: 5px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 3px solid var(--accent);
+}
+
+.timeline-content {
+  background: var(--card-bg);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+}
+
+.timeline-date {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.timeline-content h3 {
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+}
+
+.timeline-content p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Galeria Carreira PF */
+.pillars {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pillar {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  background: var(--bg-alt);
+  padding: 16px;
+  border-radius: 8px;
+  border-left: 4px solid var(--accent);
+}
+
+.pillar i {
+  color: var(--accent);
+  font-size: 1.4rem;
+  margin-top: 3px;
+}
+
+.pillar h4 {
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.pillar p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s;
+}
+
+.gallery-img:hover {
+  transform: scale(1.03);
+}
+
+.gallery-img.tall {
+  grid-row: span 2;
+  height: 395px;
+}
+
+/* Objetivos (Acordeão Interativo) */
+.roadmap-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.goal-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 22px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: border-color 0.3s;
+}
+
+.goal-card:hover, .goal-card.active {
+  border-color: var(--accent);
+}
+
+.goal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.step-num {
+  background: var(--primary);
+  color: var(--accent);
+  font-weight: 700;
+  padding: 6px 11px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.goal-header h3 {
+  font-size: 1.05rem;
+  flex: 1;
+}
+
+.goal-header i {
+  color: var(--accent);
+  transition: transform 0.3s;
+}
+
+.goal-card.active .goal-header i {
+  transform: rotate(180deg);
+}
+
+.goal-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, margin-top 0.35s ease;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.goal-card.active .goal-body {
+  max-height: 200px;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Habilidades */
+.skills-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+}
+
+.skill-box {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+}
+
+.skill-box h3 {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+}
+
+.skill-box h3 i {
+  color: var(--accent);
+}
+
+.skill-list {
+  list-style: none;
+}
+
+.skill-list li {
+  margin-bottom: 14px;
+  padding-left: 20px;
+  position: relative;
+  color: var(--text-muted);
+}
+
+.skill-list li::before {
+  content: '▸';
+  color: var(--accent);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tag {
+  background: rgba(212, 175, 55, 0.15);
+  color: var(--primary);
+  border: 1px solid var(--accent);
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+body.dark-theme .tag {
+  color: #fde047;
+}
+
+.skill-banner img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+/* Seção Tecnologia */
+.bg-dark-accent {
+  background: linear-gradient(135deg, #0b1629 0%, #162b4d 100%);
+  color: #ffffff;
+}
+
+.section-header.light .section-title {
+  color: #ffffff;
+}
+
+.section-header.light p {
+  color: #cbd5e1;
+}
+
+.tech-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.tech-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  padding: 30px 25px;
+  border-radius: 12px;
+  transition: transform 0.3s;
+}
+
+.tech-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+}
+
+.tech-icon {
+  width: 52px;
+  height: 52px;
+  background: var(--accent);
+  color: var(--primary);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.tech-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  color: #fde047;
+}
+
+.tech-card p {
+  color: #e2e8f0;
+  font-size: 0.95rem;
+}
+
+/* Rodapé */
+footer {
+  background: #060d18;
+  color: #9ca3af;
+  padding: 35px 0;
+  text-align: center;
+  border-top: 2px solid var(--accent);
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-sub {
+  font-size: 0.85rem;
+}
+
+.top-btn {
+  margin-top: 12px;
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 6px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.top-btn:hover {
+  background: var(--accent);
+  color: var(--primary);
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .grid-2, .skills-wrapper, .tech-cards, .roadmap-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: var(--primary);
+    flex-direction: column;
+    padding: 20px 0;
+    gap: 15px;
+    display: none;
+    border-bottom: 2px solid var(--accent);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+}
